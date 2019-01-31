@@ -1,4 +1,37 @@
 // -----------------------------------------------------------------------------
+// colors
+// -----------------------------------------------------------------------------
+
+$white:   rgb(255,255,255);
+$alabaster-white: rgb(247, 247, 247);
+$chateau-gray: rgb(161, 167, 179);
+$raven-gray: rgb(125, 130, 138);
+
+$trout-gray: rgb(73, 79, 92);
+$bright-gray: rgb(59, 62, 72);
+$charade-gray: rgb(44, 48, 57);
+
+$sushi-green: rgb(151, 177, 71);
+$jaffa-orange: rgb(239, 151, 65);
+$punch-red: rgb(220, 64, 49);
+$curious-blue: rgb(23, 161, 229);
+
+$color-primary:  $sushi-green;
+$color-info:     $curious-blue;
+$color-success:  $sushi-green;
+$color-warning:  $jaffa-orange;
+$color-danger:   $punch-red;
+
+$color-dark:     $trout-gray;
+$color-darker:   $bright-gray;
+$color-darkest:  $charade-gray;
+
+$color-light:    $raven-gray;
+$color-lighter:  $chateau-gray; 
+$color-lightest: $alabaster-white;
+
+
+// -----------------------------------------------------------------------------
 // spaces
 // -----------------------------------------------------------------------------
 

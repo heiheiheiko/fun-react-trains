@@ -1,0 +1,25 @@
+@import '../utils/functions';
+@import '../utils/variables';
+
+$primary:             $color-primary;
+$info:                $color-info;
+$success:             $color-success;
+$warning:             $color-warning;
+$danger:              $color-danger;
+$dark:                $color-dark;
+
+$text-strong:         $color-dark;
+
+$link:                $color-primary;
+$link-invert:         $color-dark;
+$link-visited:        $color-primary;
+
+$link-interaction:    shade($color-primary, 10%);
+$link-hover:          $link-interaction;
+$link-hover-border:   $link-interaction;
+
+$link-focus:          $link-interaction;
+$link-focus-border:   $link-interaction;
+
+$link-active:         $color-danger;
+$link-active-border:  $color-danger;
