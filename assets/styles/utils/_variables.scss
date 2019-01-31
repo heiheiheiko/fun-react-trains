@@ -1,0 +1,29 @@
+// -----------------------------------------------------------------------------
+// spaces
+// -----------------------------------------------------------------------------
+
+$space-tiny:    0.25rem;  /*  4px / 16px */
+$space-small:   0.75rem;  /* 12px / 16px */
+$space-normal:  1.5rem;   /* 24px / 16px */
+$space-medium:  2.25rem;  /* 36px / 16px */
+$space-large:   3rem;     /* 48px / 16px */
+
+$spaces: (
+  tiny:   $space-tiny,
+  small:  $space-small,
+  normal: $space-normal,
+  medium: $space-medium,
+  large:  $space-large
+);
+
+
+// -----------------------------------------------------------------------------
+// layers
+// -----------------------------------------------------------------------------
+
+$layer-tiny:        20;
+$layer-small:       40;
+$layer-normal:      60;
+$layer-medium:      80;
+$layer-large:      100;
+$layer-giant:      999;

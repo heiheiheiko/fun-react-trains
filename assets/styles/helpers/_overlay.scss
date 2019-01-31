@@ -1,0 +1,10 @@
+@import '../utils/variables';
+
+.overlay {
+  position: relative;
+}
+
+.overlay__layer {
+  position: absolute;
+  z-index: $layer-tiny;
+}

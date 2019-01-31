@@ -1,0 +1,34 @@
+@import '../utils/variables';
+
+@each $prop, $abbrev in (margin: m, padding: p) {
+    @each $name, $space in $spaces {
+        // examples: m-small, p-large
+        .#{$abbrev}-#{$name} {
+            #{$prop}: $space !important;
+        }
+
+        // examples: mt-small, pt-small, my-large, py-large
+        .#{$abbrev}t-#{$name},
+        .#{$abbrev}y-#{$name} {
+            #{$prop}-top: $space !important;
+        }
+
+        // examples: mr-small, pr-small, mx-large, px-large
+        .#{$abbrev}r-#{$name},
+        .#{$abbrev}x-#{$name} {
+            #{$prop}-right: $space !important;
+        }
+
+        // examples: mb-small, pb-small, my-large, py-large
+        .#{$abbrev}b-#{$name},
+        .#{$abbrev}y-#{$name} {
+            #{$prop}-bottom: $space !important;
+        }
+
+        // examples: ml-small, pl-small, mx-large, px-large
+        .#{$abbrev}l-#{$name},
+        .#{$abbrev}x-#{$name} {
+            #{$prop}-left: $space !important;
+        }
+    }
+}
