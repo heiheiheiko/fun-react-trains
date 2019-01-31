@@ -1,12 +1,13 @@
 import React from "react";
 import { FormattedMessage } from 'react-intl'
+import WorldMap from '../components/Maps/WorldMap'
 
 const appNavItems = [
   {
-    id: "home",
-    title: "Home",
-    path: "/",
-    component: () => (<h1><FormattedMessage id="home"/></h1>)
+    id: "world-map",
+    title: "World Map",
+    path: "/world-map",
+    component: WorldMap,
   }
 ];
 
