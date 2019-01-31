@@ -5,8 +5,8 @@ import appNavItems from "../../config/AppNav"
 function App(){
   return (
     <Router>
-      <div>
-        <nav>
+      <div className="overlay">
+        <nav className="overlay__layer mt-small py-small pl-large pr-normal has-background-white-bis">
           {appNavItems.map((navItem) =>
             <NavLink 
               to={navItem.path} 
