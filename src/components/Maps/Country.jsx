@@ -1,11 +1,12 @@
 import React from "react";
 import PropTypes from 'prop-types';
 import { Geography } from "react-simple-maps";
+import { colorDarkest, colorDarker } from "../../config/colors";
 
 const mapStyles = {
-  fill: "#ECEFF1",
-  stroke: "#607D8B",
-  strokeWidth: 0.75,
+  fill: colorDarkest,
+  stroke: colorDarker,
+  strokeWidth: 0.25,
   outline: "none",
 }
 

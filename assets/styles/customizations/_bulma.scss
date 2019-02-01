@@ -10,16 +10,16 @@ $dark:                $color-dark;
 
 $text-strong:         $color-dark;
 
-$link:                $color-primary;
+$link:                $color-info;
 $link-invert:         $color-dark;
 $link-visited:        $color-primary;
 
-$link-interaction:    shade($color-primary, 10%);
+$link-interaction:    shade($color-info, 20%);
 $link-hover:          $link-interaction;
 $link-hover-border:   $link-interaction;
 
 $link-focus:          $link-interaction;
 $link-focus-border:   $link-interaction;
 
-$link-active:         $color-danger;
+$link-active:         $color-primary;
 $link-active-border:  $color-danger;

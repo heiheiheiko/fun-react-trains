@@ -7,12 +7,13 @@ function App(){
   return (
     <Router>
       <div className="overlay">
-        <nav className="overlay__layer mt-small py-small pl-large pr-normal has-background-white-bis">
+        <nav className="overlay__layer mt-small py-small px-normal has-background-light">
           {appNavItems.map((navItem) =>
             <NavLink 
+              className="ml-normal"
               to={navItem.path} 
               key={navItem.id} 
-              activeClassName="is-active"> 
+              activeClassName="has-text-primary"> 
               {navItem.title} 
             </NavLink>  
           )}
@@ -22,7 +23,7 @@ function App(){
           <Route path={navItem.path} render={() => navItem.component} key={navItem.id}/>
         )}
 
-        <div className="overlay__layer overlay__layer--top-right mt-small py-small pr-large pl-normal has-background-white-bis">
+        <div className="overlay__layer overlay__layer--top-right mt-small py-small pr-large pl-normal has-background-light">
           <Controls/>
         </div>
       </div>

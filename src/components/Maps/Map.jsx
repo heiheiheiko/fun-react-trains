@@ -10,6 +10,7 @@ import {
 import { Motion, spring } from "react-motion";
 import TrainDataService from "../../services/TrainDataService";
 import { updateMapCenter, updateMapZoom } from "../../redux/actions";
+import { colorPrimary, colorDanger, colorDark, colorDarker } from "../../config/colors";
 
 class Map extends Component {
   constructor(props) {
@@ -75,8 +76,8 @@ class Map extends Component {
                     key={train.trainNumber}
                     onClick={() => this.handleTrainClick(train)}
                   >
-                    <rect x={0} y={0} width={60} height={16} fill="#FFF" />
-                    <text x={2} y={14}>{ train.trainNumber }</text>
+                    <rect x={0} y={0} width={60} height={16} fill={colorDarker} />
+                    <text x={2} y={14} fill={colorPrimary}>{ train.trainNumber }</text>
                   </Marker>
                 )}
               </Markers>
