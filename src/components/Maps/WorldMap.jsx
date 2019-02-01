@@ -5,6 +5,7 @@ import {
   Geographies,
   Geography,
 } from "react-simple-maps"
+import { cities } from "../../config/cities"
 
 class WorldMap extends Component {
   constructor(props) {
@@ -13,6 +14,7 @@ class WorldMap extends Component {
     const yOffset = 6
     this.screenWidth = window.innerWidth;
     this.screenHeight = window.innerHeight - yOffset;
+    this.initialCoordinates = cities.find((city) => city.id === "helsinki" ).coordinates
   }
 
   render() {
@@ -24,8 +26,8 @@ class WorldMap extends Component {
         }}
         width={this.screenWidth}
         height={this.screenHeight}
-        >
-        <ZoomableGroup center={[0,20]} disablePanning>
+      >
+        <ZoomableGroup center={this.initialCoordinates} zoom={3} disablePanning>
           <Geographies geography="/maps/world-50m.json">
             {(geographies, projection) => geographies.map((geography, i) => geography.id !== "ATA" && (
               <Geography
