@@ -2,13 +2,7 @@ import React from "react";
 import PropTypes from 'prop-types';
 import { Geographies, Geography } from "react-simple-maps";
 import Map from './Map';
-
-const mapStyles = {
-  fill: "#ECEFF1",
-  stroke: "#607D8B",
-  strokeWidth: 0.75,
-  outline: "none",
-}
+import Country from './Country';
 
 function CountryMap(props) {
   return (
@@ -17,17 +11,9 @@ function CountryMap(props) {
         {(geographies, projection) =>
           geographies.map((geography, i) =>
             props.countries.includes(geography.id) && (
-              <Geography
-                key={i}
-                geography={geography}
-                projection={projection}
-                style={{
-                  default: mapStyles,
-                  hover: mapStyles,
-                  pressed: mapStyles,
-                }}
-              />
-          ))
+              <Country geography={geography} projection={projection} key={i} />
+            )
+          )
         }
       </Geographies>
     </Map>
