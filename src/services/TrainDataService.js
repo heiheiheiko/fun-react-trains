@@ -24,7 +24,6 @@ class TrainDataService {
   onMessageArrived(message) {
     const state = store.getState();
     const payloadTrain = JSON.parse(message.payloadString);
-    console.log(payloadTrain);
     const storeTrain = state.trains.find((train) => (train.trainNumber === payloadTrain.trainNumber))
 
     if (storeTrain) {
