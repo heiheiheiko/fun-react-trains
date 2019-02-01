@@ -19,7 +19,7 @@ function App(){
         </nav>
         
         {appNavItems.map((navItem) =>
-          <Route path={navItem.path} component={navItem.component} key={navItem.id}/>
+          <Route path={navItem.path} render={() => navItem.component} key={navItem.id}/>
         )}
 
         <div className="overlay__layer overlay__layer--top-right mt-small py-small pr-large pl-normal has-background-white-bis">
