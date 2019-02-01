@@ -1,9 +1,13 @@
 import React, { Component } from "react"
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import {
   ComposableMap,
   ZoomableGroup,
   Geographies,
   Geography,
+  Markers,
+  Marker,
 } from "react-simple-maps"
 import { cities } from "../../config/cities"
 import TrainDataService from "../../services/TrainDataService"
@@ -28,6 +32,8 @@ class WorldMap extends Component {
   }
 
   render() {
+    const trains = this.props.trains
+
     return (
       <ComposableMap
         projectionConfig={{
@@ -37,7 +43,7 @@ class WorldMap extends Component {
         width={this.screenWidth}
         height={this.screenHeight}
       >
-        <ZoomableGroup center={this.initialCoordinates} zoom={3} disablePanning>
+        <ZoomableGroup center={this.initialCoordinates} zoom={7} disablePanning>
           <Geographies geography="/maps/world-50m.json">
             {(geographies, projection) => geographies.map((geography, i) => geography.id !== "ATA" && (
               <Geography
@@ -61,10 +67,27 @@ class WorldMap extends Component {
               />
             ))}
           </Geographies>
+          <Markers>
+            {trains.map((train) => 
+              <Marker 
+                marker={{ coordinates: train.location.coordinates }}
+                key={train.trainNumber}
+              >
+                <rect x={0} y={0} width={60} height={16} fill="#FFF" />
+                <text x={2} y={14}>{ train.trainNumber }</text>
+              </Marker>
+            )}
+          </Markers>
         </ZoomableGroup>
       </ComposableMap>
     )
   }
 }
 
-export default WorldMap
+WorldMap.propTypes = {
+  trains: PropTypes.array,
+};
+
+const mapState = state => ({ trains: state.trains });
+const ConnectedComponent = connect(mapState, null)(WorldMap);
+export default ConnectedComponent;
