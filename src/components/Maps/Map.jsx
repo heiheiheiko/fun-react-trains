@@ -6,10 +6,10 @@ import {
   ZoomableGroup,
   Markers,
   Marker,
-} from "react-simple-maps"
-import { Motion, spring } from "react-motion"
-import { cities } from "../../config/cities"
-import TrainDataService from "../../services/TrainDataService"
+} from "react-simple-maps";
+import { Motion, spring } from "react-motion";
+import TrainDataService from "../../services/TrainDataService";
+import { updateMapCenter, updateMapZoom } from "../../redux/actions";
 
 class Map extends Component {
   constructor(props) {
@@ -18,20 +18,13 @@ class Map extends Component {
     const yOffset = 6
     this.screenWidth = window.innerWidth;
     this.screenHeight = window.innerHeight - yOffset;
-    this.initialCoordinates = cities.find((city) => city.id === "helsinki" ).coordinates
     this.trainDataService = new TrainDataService();
-
-    this.state = {
-      center: this.initialCoordinates,
-      zoom: 5,
-    }
+    this.trainZoom = 10;
   }
 
   handleTrainClick(train) {
-    this.setState({
-      zoom: 10,
-      center: train.location.coordinates,
-    })
+    this.props.updateMapCenter(train.location.coordinates);
+    this.props.updateMapZoom(this.trainZoom);
   }
 
   componentDidMount() {
@@ -59,9 +52,9 @@ class Map extends Component {
     return (
       <Motion
         style={{
-          zoom: spring(this.state.zoom, {stiffness: 210, damping: 20}),
-          x: spring(this.state.center[0], {stiffness: 210, damping: 20}),
-          y: spring(this.state.center[1], {stiffness: 210, damping: 20}),
+          zoom: spring(this.props.mapZoom, {stiffness: 210, damping: 20}),
+          x: spring(this.props.mapCenter[0], {stiffness: 210, damping: 20}),
+          y: spring(this.props.mapCenter[1], {stiffness: 210, damping: 20}),
         }}
       >
         {({zoom,x,y}) => (
@@ -98,11 +91,23 @@ class Map extends Component {
 Map.propTypes = {
   trains: PropTypes.array,
   filterString: PropTypes.string,
+  mapZoom: PropTypes.number,
+  mapCenter: PropTypes.array,
+  updateMapCenter: PropTypes.func,
+  updateMapZoom: PropTypes.func,
 };
 
 const mapState = state => ({ 
   trains: state.trains ,
   filterString: state.filterString,
+  mapZoom: state.mapZoom,
+  mapCenter: state.mapCenter,
 });
-const ConnectedComponent = connect(mapState, null)(Map);
+
+const mapDispatch = dispatch => ({
+  updateMapZoom: mapZoom => dispatch(updateMapZoom(mapZoom)),
+  updateMapCenter: mapCenter => dispatch(updateMapCenter(mapCenter)),
+});
+
+const ConnectedComponent = connect(mapState, mapDispatch)(Map);
 export default ConnectedComponent;
