@@ -31,8 +31,19 @@ class WorldMap extends Component {
     this.trainDataService.stopFetchingData();
   }
 
+  computedTrains() {
+    if (this.props.filterString) {
+      const filterTrainNumbers = this.props.filterString.
+        replace(" ", "").split(",").map((number) => parseInt(number));
+
+      return this.props.trains.filter((train) => filterTrainNumbers.includes(train.trainNumber));
+    } else {
+      return this.props.trains
+    }
+  }
+
   render() {
-    const trains = this.props.trains
+    const trains = this.computedTrains()
 
     return (
       <ComposableMap
@@ -86,8 +97,12 @@ class WorldMap extends Component {
 
 WorldMap.propTypes = {
   trains: PropTypes.array,
+  filterString: PropTypes.string,
 };
 
-const mapState = state => ({ trains: state.trains });
+const mapState = state => ({ 
+  trains: state.trains ,
+  filterString: state.filterString,
+});
 const ConnectedComponent = connect(mapState, null)(WorldMap);
 export default ConnectedComponent;
