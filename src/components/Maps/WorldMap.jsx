@@ -6,6 +6,7 @@ import {
   Geography,
 } from "react-simple-maps"
 import { cities } from "../../config/cities"
+import TrainDataService from "../../services/TrainDataService"
 
 class WorldMap extends Component {
   constructor(props) {
@@ -15,6 +16,15 @@ class WorldMap extends Component {
     this.screenWidth = window.innerWidth;
     this.screenHeight = window.innerHeight - yOffset;
     this.initialCoordinates = cities.find((city) => city.id === "helsinki" ).coordinates
+    this.trainDataService = new TrainDataService();
+  }
+
+  componentDidMount() {
+    this.trainDataService.fetchData();
+  }
+
+  componentWillUnmount(){
+    this.trainDataService.stopFetchingData();
   }
 
   render() {
