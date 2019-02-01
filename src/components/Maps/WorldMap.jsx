@@ -9,6 +9,7 @@ import {
   Markers,
   Marker,
 } from "react-simple-maps"
+import { Motion, spring } from "react-motion"
 import { cities } from "../../config/cities"
 import TrainDataService from "../../services/TrainDataService"
 
@@ -21,6 +22,18 @@ class WorldMap extends Component {
     this.screenHeight = window.innerHeight - yOffset;
     this.initialCoordinates = cities.find((city) => city.id === "helsinki" ).coordinates
     this.trainDataService = new TrainDataService();
+
+    this.state = {
+      center: this.initialCoordinates,
+      zoom: 5,
+    }
+  }
+
+  handleTrainClick(train) {
+    this.setState({
+      zoom: 10,
+      center: train.location.coordinates,
+    })
   }
 
   componentDidMount() {
@@ -46,51 +59,68 @@ class WorldMap extends Component {
     const trains = this.computedTrains()
 
     return (
-      <ComposableMap
-        projectionConfig={{
-          scale: 500,
-          rotation: [-11,0,0],
+      <Motion
+        style={{
+          zoom: spring(this.state.zoom, {stiffness: 210, damping: 20}),
+          x: spring(this.state.center[0], {stiffness: 210, damping: 20}),
+          y: spring(this.state.center[1], {stiffness: 210, damping: 20}),
         }}
-        width={this.screenWidth}
-        height={this.screenHeight}
       >
-        <ZoomableGroup center={this.initialCoordinates} zoom={7} disablePanning>
-          <Geographies geography="/maps/world-50m.json">
-            {(geographies, projection) => geographies.map((geography, i) => geography.id !== "ATA" && (
-              <Geography
-                key={i}
-                geography={geography}
-                projection={projection}
-                style={{
-                  default: {
-                    fill: "#ECEFF1",
-                    stroke: "#607D8B",
-                    strokeWidth: 0.75,
-                    outline: "none",
-                  },
-                  hover: {
-                    fill: "#607D8B",
-                    stroke: "#607D8B",
-                    strokeWidth: 0.75,
-                    outline: "none",
-                  }
-                }}
-              />
-            ))}
-          </Geographies>
-          <Markers>
-            {trains.map((train) => 
-              <Marker 
-                marker={{ coordinates: train.location.coordinates }}
-                key={train.trainNumber}
-              >
-                <rect x={0} y={0} width={60} height={16} fill="#FFF" />
-                <text x={2} y={14}>{ train.trainNumber }</text>
-              </Marker>
-            )}
-          </Markers>
-        </ZoomableGroup>
-      </ComposableMap>
+        {({zoom,x,y}) => (
+          <ComposableMap
+            projectionConfig={{
+              scale: 500,
+              rotation: [-11,0,0],
+            }}
+            width={this.screenWidth}
+            height={this.screenHeight}
+          >
+            <ZoomableGroup center={[x,y]} zoom={zoom}>
+              <Geographies geography="/maps/world-50m.json">
+                {(geographies, projection) => geographies.map((geography, i) => geography.id !== "ATA" && (
+                  <Geography
+                    key={i}
+                    geography={geography}
+                    projection={projection}
+                    style={{
+                      default: {
+                        fill: "#ECEFF1",
+                        stroke: "#607D8B",
+                        strokeWidth: 0.75,
+                        outline: "none",
+                      },
+                      hover: {
+                        fill: "#ECEFF1",
+                        stroke: "#607D8B",
+                        strokeWidth: 0.75,
+                        outline: "none",
+                      },
+                      pressed: {
+                        fill: "#ECEFF1",
+                        stroke: "#607D8B",
+                        strokeWidth: 0.75,
+                        outline: "none",
+                      },
+                    }}
+                  />
+                ))}
+              </Geographies>
+              <Markers>
+                {trains.map((train) => 
+                  <Marker 
+                    marker={{ coordinates: train.location.coordinates }}
+                    key={train.trainNumber}
+                    onClick={() => this.handleTrainClick(train)}
+                  >
+                    <rect x={0} y={0} width={60} height={16} fill="#FFF" />
+                    <text x={2} y={14}>{ train.trainNumber }</text>
+                  </Marker>
+                )}
+              </Markers>
+            </ZoomableGroup>
+          </ComposableMap>
+        )}
+      </Motion>
     )
   }
 }
