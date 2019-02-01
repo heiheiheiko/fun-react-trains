@@ -8,3 +8,8 @@
   position: absolute;
   z-index: $layer-tiny;
 }
+
+.overlay__layer--top-right {
+  top: 0;
+  right: 0;
+}

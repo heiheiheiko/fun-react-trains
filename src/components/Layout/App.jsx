@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
-import appNavItems from "../../config/AppNav"
+import appNavItems from "../../config/AppNav";
+import Controls from "../Controls/Controls";
 
 function App(){
   return (
@@ -20,6 +21,10 @@ function App(){
         {appNavItems.map((navItem) =>
           <Route path={navItem.path} component={navItem.component} key={navItem.id}/>
         )}
+
+        <div className="overlay__layer overlay__layer--top-right mt-small py-small pr-large pl-normal has-background-white-bis">
+          <Controls/>
+        </div>
       </div>
     </Router>
   );

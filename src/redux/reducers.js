@@ -1,7 +1,8 @@
-import { ADD_TRAIN, UPDATE_TRAIN } from "./action-types";
+import { ADD_TRAIN, UPDATE_TRAIN, UPDATE_TRAIN_FILTER } from "./action-types";
 
 const initialState = {
-  trains: []
+  trains: [],
+  filterString: ""
 }
 
 function rootReducer(state = initialState, action) {
@@ -15,7 +16,6 @@ function rootReducer(state = initialState, action) {
 
   if (action.type === UPDATE_TRAIN) {
     console.log(UPDATE_TRAIN)
-
     const trains = state.trains.map((train) => {
       if (train.trainNumber === action.payload.trainNumber) {
         return action.payload
@@ -26,6 +26,13 @@ function rootReducer(state = initialState, action) {
 
     return Object.assign({}, state, { 
       trains: trains
+    });
+  }
+  
+  if (action.type === UPDATE_TRAIN_FILTER) {
+    console.log(UPDATE_TRAIN_FILTER)
+    return Object.assign({}, state, {
+      filterString: action.filterString
     });
   }
 
