@@ -9,7 +9,7 @@ import { cities } from "../config/cities";
 
 const initialState = {
   trains: [],
-  filterString: "",
+  trainFilterString: "",
   mapZoom: 5,
   mapCenter: cities.find((city) => city.id === "helsinki" ).coordinates,
 }
@@ -41,7 +41,7 @@ function rootReducer(state = initialState, action) {
   if (action.type === UPDATE_TRAIN_FILTER) {
     console.log(UPDATE_TRAIN_FILTER)
     return Object.assign({}, state, {
-      filterString: action.filterString
+      trainFilterString: action.trainFilterString
     });
   }
 

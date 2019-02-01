@@ -48,7 +48,7 @@ TrainFilterForm.propTypes = {
 };
 
 const mapDispatch = dispatch => ({
-  updateTrainFilter: filterString => dispatch(updateTrainFilter(filterString)) 
+  updateTrainFilter: trainFilterString => dispatch(updateTrainFilter(trainFilterString)) 
 });
 const ConnectedComponent = connect(null, mapDispatch)(TrainFilterForm);
 export default ConnectedComponent;

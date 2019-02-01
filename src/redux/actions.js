@@ -14,8 +14,8 @@ export const updateTrain = (payload) => {
   return { type: UPDATE_TRAIN, payload }
 }
 
-export const updateTrainFilter = (filterString) => {
-  return { type: UPDATE_TRAIN_FILTER, filterString }
+export const updateTrainFilter = (trainFilterString) => {
+  return { type: UPDATE_TRAIN_FILTER, trainFilterString }
 }
 
 export const updateMapZoom = (mapZoom) => {

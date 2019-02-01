@@ -36,8 +36,8 @@ class Map extends Component {
   }
 
   computedTrains() {
-    if (this.props.filterString) {
-      const filterTrainNumbers = this.props.filterString.
+    if (this.props.trainFilterString) {
+      const filterTrainNumbers = this.props.trainFilterString.
         replace(" ", "").split(",").map((number) => parseInt(number));
 
       return this.props.trains.filter((train) => filterTrainNumbers.includes(train.trainNumber));
@@ -90,7 +90,7 @@ class Map extends Component {
 
 Map.propTypes = {
   trains: PropTypes.array,
-  filterString: PropTypes.string,
+  trainFilterString: PropTypes.string,
   mapZoom: PropTypes.number,
   mapCenter: PropTypes.array,
   updateMapCenter: PropTypes.func,
@@ -99,7 +99,7 @@ Map.propTypes = {
 
 const mapState = state => ({ 
   trains: state.trains ,
-  filterString: state.filterString,
+  trainFilterString: state.trainFilterString,
   mapZoom: state.mapZoom,
   mapCenter: state.mapCenter,
 });
