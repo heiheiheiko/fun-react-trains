@@ -1,4 +1,6 @@
 import { Client } from "paho-mqtt"
+import store from "../redux/store";
+import { addTrain, updateTrain } from "../redux/actions";
 
 class TrainDataService {
   constructor(){
@@ -20,7 +22,15 @@ class TrainDataService {
   }
 
   onMessageArrived(message) {
-    console.log(`onMessageArrived: ${message.payloadString}`);
+    const state = store.getState();
+    const payloadTrain = JSON.parse(message.payloadString);
+    const storeTrain = state.trains.find((train) => (train.trainNumber === payloadTrain.trainNumber))
+    
+    if (storeTrain) {
+      store.dispatch(updateTrain(payloadTrain));
+    } else {
+      store.dispatch(addTrain(payloadTrain));
+    }
   }
 
   fetchData(){
