@@ -1,6 +1,7 @@
 import React from 'react';
 import TrainFilterForm from './TrainFilterForm';
 import MapZoomControls from './MapZoomControls';
+import MapCenterLabel from './MapCenterLabel';
 
 function AppAside(props) {
   return (
@@ -11,6 +12,10 @@ function AppAside(props) {
 
       <div className="mt-small py-small pr-large pl-normal has-background-light">
         <MapZoomControls/>
+      </div>
+
+      <div className="mt-small py-small pr-large pl-normal has-background-light">
+        <MapCenterLabel/>
       </div>
     </div>
    );
