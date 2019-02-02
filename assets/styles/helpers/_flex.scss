@@ -1,0 +1,42 @@
+// source: https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+
+// =================================================================================================================
+// parents
+// =================================================================================================================
+
+
+//// ---------------------------------------------------------------------------------------------------------------
+//// direction
+//// ---------------------------------------------------------------------------------------------------------------
+
+.f-row {
+  display: flex;  // default
+  flex-direction: row;  // default
+}
+
+.f-column {
+  display: flex;
+  flex-direction: column;
+}
+
+
+//// ---------------------------------------------------------------------------------------------------------------
+//// chosen axis item placement
+//// ---------------------------------------------------------------------------------------------------------------
+
+.f-start   { justify-content: flex-start; }  // default
+.f-end     { justify-content: flex-end; }
+.f-center  { justify-content: center; }
+.f-between { justify-content: space-between; }
+.f-around  { justify-content: space-around; }
+
+
+//// ---------------------------------------------------------------------------------------------------------------
+//// cross axis item placement
+//// ---------------------------------------------------------------------------------------------------------------
+
+.f-cstretch  { align-items: stretch; }  // default
+.f-cstart    { align-items: flex-start; }
+.f-cend      { align-items: flex-end; }
+.f-ccenter   { align-items: center; }
+.f-cbaseline { align-items: baseline; }
