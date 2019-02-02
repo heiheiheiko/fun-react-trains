@@ -10,7 +10,7 @@ import {
 import { Motion, spring } from "react-motion";
 import TrainDataService from "../../services/TrainDataService";
 import { updateMapCenter, updateMapZoom } from "../../redux/actions";
-import { colorPrimary, colorDanger } from "../../config/colors";
+import { colorPrimary, colorDanger, colorWarning, colorInfo } from "../../config/colors";
 
 class Map extends Component {
   constructor(props) {
@@ -77,17 +77,36 @@ class Map extends Component {
                     key={train.trainNumber}
                     marker={{ coordinates: train.location.coordinates }}
                     onClick={() => this.onTrainClick(train)}
+                    style={{
+                      default: { stroke: colorInfo },
+                      hover: { stroke: colorPrimary },
+                      pressed: { stroke: colorPrimary },
+                    }}
                   >
-                    <circle
-                      cx={0}
-                      cy={0}
-                      r={3}
-                      style={{ stroke: colorDanger, strokeWidth: 3 }}
-                    />
+                    <g transform="translate(-12, -24)">
+                      <path
+                        fill="none"
+                        strokeWidth="2"
+                        strokeLinecap="square"
+                        strokeMiterlimit="10"
+                        strokeLinejoin="miter"
+                        d="M20,9c0,4.9-8,13-8,13S4,13.9,4,9c0-5.1,4.1-8,8-8S20,3.9,20,9z"
+                      />
+                      <circle
+                        fill="none"
+                        strokeWidth="2"
+                        strokeLinecap="square"
+                        strokeMiterlimit="10"
+                        strokeLinejoin="miter"
+                        cx="12"
+                        cy="9"
+                        r="3"
+                      />
+                    </g>
                     <text
                       textAnchor="middle"
                       y={20}
-                      style={{ fill: colorPrimary }}
+                      style={{ fill: colorInfo }}
                     >
                       {train.trainNumber}
                     </text>
