@@ -10,7 +10,7 @@ import {
 import { Motion, spring } from "react-motion";
 import TrainDataService from "../../services/TrainDataService";
 import { updateMapCenter, updateMapZoom } from "../../redux/actions";
-import { colorPrimary, colorDanger, colorDark, colorDarker } from "../../config/colors";
+import { colorPrimary, colorDanger } from "../../config/colors";
 
 class Map extends Component {
   constructor(props) {
@@ -23,7 +23,7 @@ class Map extends Component {
     this.trainZoom = 10;
   }
 
-  handleTrainClick(train) {
+  onTrainClick(train) {
     this.props.updateMapCenter(train.location.coordinates);
     if (this.props.mapZoom < 10) {
       this.props.updateMapZoom(this.trainZoom);
@@ -73,13 +73,24 @@ class Map extends Component {
               {this.props.children}
               <Markers>
                 {trains.map((train) => 
-                  <Marker 
-                    marker={{ coordinates: train.location.coordinates }}
+                  <Marker
                     key={train.trainNumber}
-                    onClick={() => this.handleTrainClick(train)}
+                    marker={{ coordinates: train.location.coordinates }}
+                    onClick={() => this.onTrainClick(train)}
                   >
-                    <rect x={0} y={0} width={60} height={16} fill={colorDarker} />
-                    <text x={2} y={14} fill={colorPrimary}>{ train.trainNumber }</text>
+                    <circle
+                      cx={0}
+                      cy={0}
+                      r={3}
+                      style={{ stroke: colorDanger, strokeWidth: 3 }}
+                    />
+                    <text
+                      textAnchor="middle"
+                      y={20}
+                      style={{ fill: colorPrimary }}
+                    >
+                      {train.trainNumber}
+                    </text>
                   </Marker>
                 )}
               </Markers>
