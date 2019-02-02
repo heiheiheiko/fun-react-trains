@@ -25,7 +25,9 @@ class Map extends Component {
 
   handleTrainClick(train) {
     this.props.updateMapCenter(train.location.coordinates);
-    this.props.updateMapZoom(this.trainZoom);
+    if (this.props.mapZoom < 10) {
+      this.props.updateMapZoom(this.trainZoom);
+    }
   }
 
   componentDidMount() {

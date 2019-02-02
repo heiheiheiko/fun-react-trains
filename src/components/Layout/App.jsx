@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
 import appNavItems from "../../config/AppNav";
-import Controls from "../Controls/Controls";
+import AppAside from "./AppAside";
 
 function App(){
   return (
@@ -23,9 +23,7 @@ function App(){
           <Route path={navItem.path} render={() => navItem.component} key={navItem.id}/>
         )}
 
-        <div className="overlay__layer overlay__layer--top-right mt-small py-small pr-large pl-normal has-background-light">
-          <Controls/>
-        </div>
+        <AppAside/>
       </div>
     </Router>
   );
