@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<MapZoomControls> matched the snapshot 1`] = `
+<div
+  className="f-row f-ccenter"
+>
+  <a
+    className="button is-outlined is-primary has-text-weight-semibold"
+    onClick={[Function]}
+  >
+    -
+  </a>
+  <div
+    className="is-size-4 mx-small has-text-weight-semibold"
+  >
+     
+     
+  </div>
+  <a
+    className="button is-outlined is-primary has-text-weight-semibold"
+    onClick={[Function]}
+  >
+    +
+  </a>
+</div>
+`;

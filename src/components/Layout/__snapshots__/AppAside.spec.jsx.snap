@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<AppAside> matched the snapshot 1`] = `
+<div
+  className="overlay__layer overlay__layer--top-right mt-small"
+>
+  <div
+    className="py-small pr-large pl-normal has-background-light"
+  >
+    <div>
+       TrainFilterForm 
+    </div>
+  </div>
+  <div
+    className="mt-small py-small pr-large pl-normal has-background-light"
+  >
+    <div>
+       MapZoomControls 
+    </div>
+  </div>
+  <div
+    className="mt-small py-small pr-large pl-normal has-background-light"
+  >
+    <div>
+       MapCenterLabel 
+    </div>
+  </div>
+</div>
+`;

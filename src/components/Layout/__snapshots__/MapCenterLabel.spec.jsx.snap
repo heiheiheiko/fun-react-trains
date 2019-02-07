@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<MapCenterLabel> matched the snapshot 1`] = `
+<a
+  className="f-row f-ccenter"
+  href="http://www.google.com/maps/place/1,1"
+  rel="noreferrer noopener"
+  target="_blank"
+>
+  <div
+    className="is-size-5 mx-small has-text-weight-semibold"
+  >
+     Lat: 
+    1.00
+    ... 
+  </div>
+  <div
+    className="is-size-5 mx-small has-text-weight-semibold"
+  >
+     Long: 
+    1.00
+    ... 
+  </div>
+</a>
+`;
