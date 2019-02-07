@@ -52,7 +52,7 @@
   },
   "jest": {
     "setupFilesAfterEnv": [
-      "<rootDir>/__test__/config/enzyme.js"
+      "<rootDir>/__specs__/config/enzyme.js"
     ]
   }
 }
