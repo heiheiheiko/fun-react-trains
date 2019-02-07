@@ -1,7 +1,7 @@
 import { flatten } from "./objectHelper" 
 
 describe('flatten', () => {
-  test('converts a object with several levels into an object with only one level', () => {
+  it('converts a object with several levels into an object with only one level', () => {
     const inputData = {
         "key1": "Key1",
         "key2": {
@@ -35,7 +35,7 @@ describe('flatten', () => {
   describe.each(inputDataArray)(
     'will throw TypeError by receiving', 
     (name, inputData) => {
-      test(`${name}`, () => {
+      it(`${name}`, () => {
         function flattenInputData() {
           flatten(inputData);
         }
