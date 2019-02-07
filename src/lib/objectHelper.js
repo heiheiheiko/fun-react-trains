@@ -18,6 +18,10 @@ function dive(currentKey, into, target) {
 }
 
 export function flatten(arr) {
+  if (typeof arr !== 'object'){
+    throw new TypeError('Param should be an object');
+  }
+
   var newObj = {};
   dive("", arr, newObj);
   return newObj;
