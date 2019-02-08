@@ -1,33 +1,39 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<TrainFilterForm> matched the snapshot 1`] = `
-<form
-  onSubmit={[Function]}
->
-  <div
-    className="field has-addons"
+<div>
+   
+   
+  <form
+    onSubmit={[Function]}
   >
     <div
-      className="control"
+      className="field has-addons"
     >
-      <input
-        className="input"
-        name="filter"
-        onChange={[Function]}
-        placeholder="filter by train number..."
-        type="text"
-        value=""
-      />
+      <div
+        className="control"
+      >
+        <input
+          className="input"
+          name="filter"
+          onChange={[Function]}
+          placeholder="filter by train number..."
+          type="text"
+          value=""
+        />
+      </div>
+      <div
+        className="control"
+      >
+        <input
+          className="button is-primary"
+          type="submit"
+          value="apply"
+        />
+      </div>
     </div>
-    <div
-      className="control"
-    >
-      <input
-        className="button is-primary"
-        type="submit"
-        value="apply"
-      />
-    </div>
-  </div>
-</form>
+  </form>
+   
+   
+</div>
 `;

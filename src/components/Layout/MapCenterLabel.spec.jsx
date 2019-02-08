@@ -1,8 +1,8 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import configureStore from 'redux-mock-store';
-import { Provider } from "react-redux";
 import renderer from 'react-test-renderer'
+import SpecContainer from '../../../__specs__/helpers/SpecReduxIntelContainer'
 
 import MapCenterLabel from './MapCenterLabel';
 
@@ -13,7 +13,7 @@ describe('<MapCenterLabel>', () => {
 
   beforeEach(() => {
     store = mockStore(initialState)
-    componentContainer = <Provider store={store}><MapCenterLabel /></Provider>;
+    componentContainer = <SpecContainer store={store}> <MapCenterLabel /> </SpecContainer>;
   })
 
   it('could be renderd', () => {

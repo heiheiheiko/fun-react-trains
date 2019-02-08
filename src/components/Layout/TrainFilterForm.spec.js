@@ -1,8 +1,8 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import configureStore from 'redux-mock-store';
-import { Provider } from "react-redux";
-import renderer from 'react-test-renderer'
+import renderer from 'react-test-renderer';
+import SpecContainer from '../../../__specs__/helpers/SpecReduxIntelContainer';
 
 import TrainFilterForm from './TrainFilterForm';
 
@@ -13,7 +13,7 @@ describe('<TrainFilterForm>', () => {
 
   beforeEach(() => {
     store = mockStore(initialState)
-    componentContainer = <Provider store={store}><TrainFilterForm /></Provider>;
+    componentContainer = <SpecContainer store={store}> <TrainFilterForm /> </SpecContainer>;
   })
 
   it('could be renderd', () => {

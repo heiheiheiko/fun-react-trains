@@ -1,31 +1,39 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<App> matched the snapshot 1`] = `
-<div
-  className="overlay"
->
-  <nav
-    className="overlay__layer mt-small py-small px-normal has-background-light"
+<div>
+   
+  <div
+    className="overlay"
   >
-    <a
-      aria-current={null}
-      className="ml-normal"
-      href="/world"
-      onClick={[Function]}
+    <nav
+      className="overlay__layer mt-small py-small px-normal has-background-light"
     >
-      World
-    </a>
-    <a
-      aria-current={null}
-      className="ml-normal"
-      href="/finnland"
-      onClick={[Function]}
-    >
-      Finnland
-    </a>
-  </nav>
-  <div>
-     AppAside 
+      <a
+        aria-current={null}
+        className="ml-normal"
+        href="/world"
+        onClick={[Function]}
+      >
+        <span>
+          World
+        </span>
+      </a>
+      <a
+        aria-current={null}
+        className="ml-normal"
+        href="/finnland"
+        onClick={[Function]}
+      >
+        <span>
+          Finnland
+        </span>
+      </a>
+    </nav>
+    <div>
+       AppAside 
+    </div>
   </div>
+   
 </div>
 `;

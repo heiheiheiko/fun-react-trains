@@ -1,8 +1,8 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import configureStore from 'redux-mock-store';
-import { Provider } from "react-redux";
 import renderer from 'react-test-renderer'
+import SpecContainer from '../../../__specs__/helpers/SpecReduxIntelContainer'
 
 import MapZoomControls from './MapZoomControls';
 
@@ -13,7 +13,7 @@ describe('<MapZoomControls>', () => {
 
   beforeEach(() => {
     store = mockStore(initialState)
-    componentContainer = <Provider store={store}><MapZoomControls /></Provider>;
+    componentContainer = <SpecContainer store={store}><MapZoomControls /></SpecContainer>;
   })
 
   it('could be renderd', () => {
