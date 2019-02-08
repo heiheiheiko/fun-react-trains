@@ -83,7 +83,7 @@ class Map extends Component {
                       pressed: { stroke: colorPrimary },
                     }}
                   >
-                    <g transform="translate(-12, -24)">
+                    <g transform="translate(-12, -24)" className="is-interactable">
                       <path
                         fill="none"
                         strokeWidth="2"
@@ -104,6 +104,7 @@ class Map extends Component {
                       />
                     </g>
                     <text
+                      className="is-interactable"
                       textAnchor="middle"
                       y={20}
                       style={{ fill: colorInfo }}
