@@ -1,17 +1,18 @@
 import React from 'react';
+import { FormattedMessage } from 'react-intl'
 import WorldMap from '../components/Maps/WorldMap';
 import CountryMap from '../components/Maps/CountryMap';
 
 const appNavItems = [
   {
     id: "world",
-    title: "World",
+    title: <FormattedMessage id="pages.world"/>,
     path: "/world",
     component: <WorldMap/>,
   },
   {
     id: "finnland",
-    title: "Finnland",
+    title: <FormattedMessage id="pages.finnland"/>,
     path: "/finnland",
     component: <CountryMap countries={["FIN"]}/>,
   }

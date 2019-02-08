@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from "react-redux";
 import PropTypes from 'prop-types';
+import { FormattedMessage } from 'react-intl'
 import { updateTrainFilter } from "../../redux/actions";
 
 class TrainFilterForm extends React.Component {
@@ -25,17 +26,25 @@ class TrainFilterForm extends React.Component {
       <form onSubmit={() => this.onSubmit()}>
         <div className="field has-addons">
           <div className="control">
-            <input 
-              className="input"
-              type="text" 
-              name="filter" 
-              value={this.state.filterFieldValue} 
-              placeholder="filter by train number..."
-              onChange={() => this.onChange()} 
-            />
+            <FormattedMessage id="aside.trainFilterForm.placeholder"> 
+              {(trans) => (
+                <input 
+                  className="input"
+                  type="text" 
+                  name="filter" 
+                  value={this.state.filterFieldValue} 
+                  placeholder={trans}
+                  onChange={() => this.onChange()} 
+                />
+              )}
+            </FormattedMessage>
           </div>
           <div className="control">
-            <input className="button is-primary" type="submit" value="apply" />
+            <FormattedMessage id="actions.apply"> 
+              {(trans) => (  
+                <input className="button is-primary" type="submit" value={trans} />
+              )}
+            </FormattedMessage>
           </div>
         </div>
       </form>
