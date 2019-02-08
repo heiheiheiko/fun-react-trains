@@ -5,14 +5,7 @@ import {
   UPDATE_MAP_ZOOM,
   UPDATE_MAP_CENTER,
 } from "./action-types";
-import { cities } from "../config/cities";
-
-const initialState = {
-  trains: [],
-  trainFilterString: "",
-  mapZoom: 5,
-  mapCenter: cities.find((city) => city.id === "helsinki" ).coordinates,
-}
+import initialState from "./initialState";
 
 function rootReducer(state = initialState, action) {
 
