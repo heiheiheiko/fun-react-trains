@@ -3,7 +3,7 @@ import { FormattedMessage } from 'react-intl'
 import WorldMap from '../components/Maps/WorldMap';
 import CountryMap from '../components/Maps/CountryMap';
 
-const appNavItems = [
+const pages = [
   {
     id: "world",
     title: <FormattedMessage id="pages.world"/>,
@@ -18,4 +18,4 @@ const appNavItems = [
   }
 ];
 
-export default appNavItems;
+export default pages;

@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
-import appNavItems from "../../config/AppNav";
+import pages from "../../config/Pages";
 import AppAside from "./AppAside";
 
 function App(){
@@ -8,7 +8,7 @@ function App(){
     <Router>
       <div className="overlay">
         <nav className="overlay__layer mt-small py-small px-normal has-background-light">
-          {appNavItems.map((navItem) =>
+          {pages.map((navItem) =>
             <NavLink 
               className="ml-normal"
               to={navItem.path} 
@@ -19,7 +19,7 @@ function App(){
           )}
         </nav>
         
-        {appNavItems.map((navItem) =>
+        {pages.map((navItem) =>
           <Route path={navItem.path} render={() => navItem.component} key={navItem.id}/>
         )}
 
