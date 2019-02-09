@@ -6,7 +6,7 @@ import SpecContainer from '../../../__specs__/helpers/SpecReduxIntelContainer'
 import MapCenterLabel from './MapCenterLabel';
 
 describe('<MapCenterLabel>', () => {
-  let store, componentContainer;
+  let componentContainer;
 
   beforeEach(() => {
     componentContainer = <SpecContainer> <MapCenterLabel /> </SpecContainer>;
