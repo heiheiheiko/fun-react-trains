@@ -8,6 +8,10 @@ import CountryMap from './CountryMap';
 jest.mock('./Country', () => ()=> "Country");
 jest.mock('./Map', () => ()=> "Map");
 
+jest.mock('react-simple-maps', () => ({
+  Geographies: "Geographies"
+}))
+
 describe('<CountryMap>', () => {
   it('could be renderd', () => {
     const mountedSpecContainer = mount(<SpecContainer><CountryMap/></SpecContainer>);
