@@ -30,9 +30,7 @@ exports[`<App> matched the snapshot 1`] = `
         </span>
       </a>
     </nav>
-    <div>
-       AppAside 
-    </div>
+    AppAside
   </div>
    
 </div>

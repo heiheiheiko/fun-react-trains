@@ -5,9 +5,9 @@ import SpecContainer from '../../../__specs__/helpers/SpecIntelContainer';
 
 import AppAside from './AppAside';
 
-jest.mock('./TrainFilterForm', () => ()=> <div> TrainFilterForm </div>);
-jest.mock('./MapZoomControls', () => ()=> <div> MapZoomControls </div>);
-jest.mock('./MapCenterLabel', () => ()=> <div> MapCenterLabel </div>);
+jest.mock('./TrainFilterForm', () => ()=> "TrainFilterForm");
+jest.mock('./MapZoomControls', () => ()=> "MapZoomControls");
+jest.mock('./MapCenterLabel', () => ()=> "MapCenterLabel");
 
 describe('<AppAside>', () => {
   it('could be renderd', () => {

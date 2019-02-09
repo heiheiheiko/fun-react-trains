@@ -9,23 +9,17 @@ exports[`<AppAside> matched the snapshot 1`] = `
     <div
       className="py-small pr-large pl-normal has-background-light"
     >
-      <div>
-         TrainFilterForm 
-      </div>
+      TrainFilterForm
     </div>
     <div
       className="mt-small py-small pr-large pl-normal has-background-light"
     >
-      <div>
-         MapZoomControls 
-      </div>
+      MapZoomControls
     </div>
     <div
       className="mt-small py-small pr-large pl-normal has-background-light"
     >
-      <div>
-         MapCenterLabel 
-      </div>
+      MapCenterLabel
     </div>
   </div>
    

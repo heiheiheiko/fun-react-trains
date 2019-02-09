@@ -5,7 +5,7 @@ import SpecContainer from '../../../__specs__/helpers/SpecIntelContainer';
 
 import App from './App';
 
-jest.mock('./AppAside', () => ()=> <div> AppAside </div>);
+jest.mock('./AppAside', () => ()=> "AppAside");
 
 describe('<App>', () => {
   it('could be renderd', () => {
