@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Map> matched the snapshot 1`] = `
+<div>
+   
+   
+  <Motion
+    style={
+      Object {
+        "x": "spring",
+        "y": "spring",
+        "zoom": "spring",
+      }
+    }
+  />
+   
+   
+</div>
+`;

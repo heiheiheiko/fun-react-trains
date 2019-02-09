@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Country> matched the snapshot 1`] = `
+<div>
+   
+  <Geography
+    style={
+      Object {
+        "default": Object {
+          "fill": "#2c3039",
+          "outline": "none",
+          "stroke": "#3b3e48",
+          "strokeWidth": 0.25,
+        },
+        "hover": Object {
+          "fill": "#2c3039",
+          "outline": "none",
+          "stroke": "#3b3e48",
+          "strokeWidth": 0.25,
+        },
+        "pressed": Object {
+          "fill": "#2c3039",
+          "outline": "none",
+          "stroke": "#3b3e48",
+          "strokeWidth": 0.25,
+        },
+      }
+    }
+  />
+   
+</div>
+`;
