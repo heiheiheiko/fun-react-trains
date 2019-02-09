@@ -6,7 +6,8 @@
   "scripts": {
     "start": "webpack-dev-server --config ./webpack.config.js --mode development",
     "format": "eslint src/. --fix",
-    "test": "jest --watchAll"
+    "test": "jest --watchAll",
+    "coverage": "jest --coverage"
   },
   "keywords": [],
   "author": "",
