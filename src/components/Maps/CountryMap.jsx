@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from 'prop-types';
-import { Geographies, Geography } from "react-simple-maps";
+import { Geographies } from "react-simple-maps";
 import Map from './Map';
 import Country from './Country';
 

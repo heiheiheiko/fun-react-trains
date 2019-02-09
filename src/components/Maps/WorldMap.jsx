@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import { Geographies, Geography } from "react-simple-maps";
+import React from "react";
+import { Geographies } from "react-simple-maps";
 import Map from './Map';
 import Country from './Country';
 
