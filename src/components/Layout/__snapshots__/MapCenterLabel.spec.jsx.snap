@@ -6,7 +6,7 @@ exports[`<MapCenterLabel> matched the snapshot 1`] = `
    
   <a
     className="f-row f-ccenter"
-    href="http://www.google.com/maps/place/1,1"
+    href="http://www.google.com/maps/place/60.1697452,24.9397973"
     rel="noreferrer noopener"
     target="_blank"
   >
@@ -17,7 +17,7 @@ exports[`<MapCenterLabel> matched the snapshot 1`] = `
         Lat
       </span>
       : 
-      1.00
+      60.17
       ...
     </div>
     <div
@@ -27,7 +27,7 @@ exports[`<MapCenterLabel> matched the snapshot 1`] = `
         Long
       </span>
       : 
-      1.00
+      24.94
       ...
     </div>
   </a>

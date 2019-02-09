@@ -1,20 +1,20 @@
 import React from 'react';
 import { Provider } from "react-redux";
-import PropTypes from 'prop-types';
+import configureStore from 'redux-mock-store';
 import SpecIntelContainer from "./SpecIntelContainer";
+import initialState from "../../src/redux/initialState";
 
 function SpecReduxIntelContainer(props) {
+  const mockStore = configureStore();
+  const store = mockStore(initialState)
+  
   return (
-    <Provider store={props.store}> 
+    <Provider store={store}> 
       <SpecIntelContainer>
         {props.children}
       </SpecIntelContainer>
     </Provider>
   );
 }
-
-SpecReduxIntelContainer.propTypes = {
-  store: PropTypes.object,
-};
 
 export default SpecReduxIntelContainer;
